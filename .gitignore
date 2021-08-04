@@ -4,6 +4,10 @@
 # Log file
 *.log
 
+#Personnal tokens
+
+.env
+
 # BlueJ files
 *.ctxt
 
