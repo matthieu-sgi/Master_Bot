@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
+const Lcd = require('lcd');
 require('dotenv').config();
 const client = new Discord.Client();
-
+const lcd = new Lcd({rs: 45,e:44,data: [66,67,68,69],cols:16,rows:2});
 
 const fs = require('fs');
 const { channel } = require('node:diagnostics_channel');
@@ -14,6 +15,17 @@ var my_serv = process.env.ID_SERV;
 client.once('ready', () => {
     console.log("Starting");
     
+})
+
+lcd.on('ready', () => {
+    setInterval(() => {
+        lcd.setCursor(0,0)
+        lcd.print("TEST", err => {
+            if(err){
+                console.log(err)
+            }
+        });
+    })
 })
 
 client.on('message', (message)=>{
