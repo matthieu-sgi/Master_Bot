@@ -4,7 +4,7 @@ const client = new Discord.Client();
 
 
 const fs = require('fs');
-const { channel } = require('node:diagnostics_channel');
+//const { channel } = require('node:diagnostics_channel');
 client.command = new Discord.Collection();
 
 let my_ping = process.env.MY_PING_ID;
