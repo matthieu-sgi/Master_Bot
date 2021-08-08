@@ -8,8 +8,8 @@ const fs = require('fs');
 const { channel } = require('node:diagnostics_channel');
 client.command = new Discord.Collection();
 
-let my_ping = process.env.MY_PING_ID;
-var my_serv = process.env.ID_SERV;
+const my_ping = process.env.MY_PING_ID;
+const my_serv = process.env.ID_SERV;
 
 
 client.once('ready', () => {
