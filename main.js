@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 require('dotenv').config();
-require('FileReader');
 
 const client = new Discord.Client();
 
@@ -55,14 +54,14 @@ client.on('message', (message)=>{
             console.log(msg+'\nLength : '+msg.length);
             var string_to_save=msg;
             
-            fs.readFile("log.txt", (err, data) => {
+            fs.readFile("msg.log", (err, data) => {
                 if(err) {return console.log(err);}
                 else{
                     const content = data;
                     
                     console.log("Extract from file : " + content);
                     string_to_save = data + "\n"+timestamp()+ " "+msg;
-                    fs.writeFile("log.txt", string_to_save, function(err) {         
+                    fs.writeFile("msg.log", string_to_save, function(err) {         
                         if(err){         
                             return console.log(err);         }
                         else{console.log("The file was saved! : " + string_to_save);     }});  
